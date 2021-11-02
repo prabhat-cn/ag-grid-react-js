@@ -12,3 +12,7 @@ npm install --save ag-grid-community ag-grid-react
 / Global Ag-Grid Css
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+
+## React Routing
+
+https://reactrouter.com/native/guides/quick-start
