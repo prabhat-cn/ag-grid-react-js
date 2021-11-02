@@ -68,7 +68,7 @@ const Table = () => {
   return (
     <>
       <div>
-        <h2>Static Data Table</h2>
+        <h2>Static Data Table & Export Csv</h2>
         <button
           onClick={() => {
             onExportClick();
