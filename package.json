@@ -3,7 +3,7 @@
   "developer": "Prabhat",
   "Tutorial": "https://youtube.com/playlist?list=PLqhnP4YYLcb4X3AgmW699wyAhoP2SYf5j",
   "tut-git": "https://github.com/vikas62081/YT/tree/agGridFilterExport",
-  "git-personal": "",
+  "git-personal": "https://github.com/prabhat-cn/ag-grid-react-js.git",
   "netlify": "",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "local-build": "react-scripts build",
+    "build": "CI= react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
