@@ -2,7 +2,7 @@ import React from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { AgAbstractField } from 'ag-grid-community';
 
-const PopulateApiData = () => {
+const RowSelectionBasedCondition = () => {
   // for export csv & Take Api
   let gridApi;
 
@@ -37,6 +37,16 @@ const PopulateApiData = () => {
     // console.log('event', event);
     console.log('event', event.api.getSelectedRows());
     // If multiple row selection then command/ctrl + click
+  };
+  // Row Selection Base On Condition checkbox
+  const isRowSelectable = (node) => {
+    // return false;
+    // handle single condition
+    // return node.data ? node.data.id % 2 === 0 : false;
+    // handle multiple conditions with odd also
+    return node.data
+      ? node.data.id % 2 === 0 || node.data.email.includes('.org')
+      : false;
   };
   // as per api data
   const columnsDefs = [
@@ -73,8 +83,8 @@ const PopulateApiData = () => {
     <>
       <div>
         <h4>
-          Populate Api Data, Row Selection, Multi & Single Select Data Row, Row
-          Selection With Check box
+          Populate Api Data, Row Selection Base On Condition & handle multiple
+          conditions
         </h4>
         <button
           onClick={() => {
@@ -100,6 +110,8 @@ const PopulateApiData = () => {
             onSelectionChanged={onSelectionChanged}
             // without ctrl+ click use
             rowMultiSelectWithClick={true}
+            // Row Selection Base On Condition
+            isRowSelectable={isRowSelectable}
           />
         </div>
       </div>
@@ -107,4 +119,4 @@ const PopulateApiData = () => {
   );
 };
 
-export default PopulateApiData;
+export default RowSelectionBasedCondition;

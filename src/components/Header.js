@@ -10,7 +10,9 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link href="/rendercustomcomponent">Render Custom</Nav.Link>
             <Nav.Link href="/populateapi">Populate Api Data</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="/selectionbasedcondition">
+              Row Selection Condition
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
