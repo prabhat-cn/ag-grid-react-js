@@ -1,3 +1,14 @@
+/* Custom css */
+.moreThan27 {
+  color: #fff;
+}
+
+.lessThan27 {
+  color: yellow;
+}
+
+/* Custom css end */
+
 .App {
   /* text-align: center; */
 }

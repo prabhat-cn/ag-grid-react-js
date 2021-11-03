@@ -47,6 +47,16 @@ const RenderCustomComponent = () => {
       headerName: 'Age',
       field: 'age',
       sortable: true,
+      // add for each column check 'value' by console.log
+      cellStyle: (params) =>
+        // console.log(
+        //   'cell-style',
+        //   params.value > 18 ? { background: 'green' } : { background: 'red' }
+        // ),
+        params.value > 27
+          ? { background: 'green', borderLeft: '5px dotted #000' }
+          : { background: 'red' },
+      cellClass: (params) => (params.value > 27 ? 'moreThan27' : 'lessThan27'),
     },
     {
       headerName: 'Department',
@@ -72,6 +82,7 @@ const RenderCustomComponent = () => {
     filter: true,
     floatingFilter: true,
     flex: 1,
+    minWidth: 100,
   };
 
   // for export csv
@@ -88,7 +99,7 @@ const RenderCustomComponent = () => {
   return (
     <>
       <div>
-        <h2>Render Custom & Static Data</h2>
+        <h2>Render Custom, Static Data, Dynamic Styles</h2>
         <button
           onClick={() => {
             onExportClick();
