@@ -14,6 +14,7 @@ const Header = () => {
               Row Selection Condition
             </Nav.Link>
             <Nav.Link href="/showhidecolumn">Show Hide Column</Nav.Link>
+            <Nav.Link href="/quickfilter">Quick Filter</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

@@ -1,5 +1,6 @@
 import { Switch, Route, Link } from 'react-router-dom';
 import PopulateApiData from './agGrid/PopulateApiData';
+import QuickFilter from './agGrid/QuickFilter';
 import RenderCustomComponent from './agGrid/RenderCustomComponent';
 import RowSelectionBasedCondition from './agGrid/RowSelectionBasedCondition';
 import ShowHideColumn from './agGrid/ShowHideColumn';
@@ -26,6 +27,7 @@ function App() {
           component={RowSelectionBasedCondition}
         />
         <Route exact path="/showhidecolumn" component={ShowHideColumn} />
+        <Route exact path="/quickfilter" component={QuickFilter} />
         <Route exact path="*">
           404 Page not found!
         </Route>
