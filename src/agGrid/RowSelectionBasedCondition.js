@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { AgAbstractField } from 'ag-grid-community';
 
 const RowSelectionBasedCondition = () => {
+  const [gridApiData, setGridApiData] = useState();
   // for export csv & Take Api
   let gridApi;
 
@@ -10,12 +11,16 @@ const RowSelectionBasedCondition = () => {
     // data response
     // onGridReady {type: 'gridReady', api: GridApi, columnApi: ColumnApi}
     gridApi = params.api;
+    // for pagination
+    setGridApiData(params);
     // console.log('onGridReady', params);
     fetch('https://jsonplaceholder.typicode.com/comments')
       .then((response) => response.json())
       .then((response) => {
         // console.log('fetch->', response);
         params.api.applyTransaction({ add: response });
+        // params api called function called  fixed number of page from "10"
+        // params.api.paginationGoToPage(10);
       })
       .catch((err) => {
         console.log(err);
@@ -27,6 +32,10 @@ const RowSelectionBasedCondition = () => {
   };
 
   // Export End
+
+  const onPaginationChange = (pageSize) => {
+    gridApiData.api.paginationSetPageSize(pageSize);
+  };
   // if click on select single/ multiple row data selected
   // const rowSelectionType = 'single';
   const rowSelectionType = 'multiple'; // Type single | multiple
@@ -75,6 +84,7 @@ const RowSelectionBasedCondition = () => {
     sortable: true,
     filter: true,
     floatingFilter: true,
+    editable: true,
     flex: 1,
     minWidth: 100,
   };
@@ -84,8 +94,21 @@ const RowSelectionBasedCondition = () => {
       <div>
         <h4>
           Populate Api Data, Row Selection Base On Condition & handle multiple
-          conditions
+          conditions, Pagination, Dynamic pagination from dropdown
         </h4>
+        {/* Dynamic pagination from dropdown */}
+        <select
+          style={{ float: 'right' }}
+          onChange={(e) => {
+            console.log('onPaginationChange', e.target.value);
+            onPaginationChange(e.target.value);
+          }}
+        >
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
         <button
           onClick={() => {
             onExportClick();
@@ -112,6 +135,10 @@ const RowSelectionBasedCondition = () => {
             rowMultiSelectWithClick={true}
             // Row Selection Base On Condition
             isRowSelectable={isRowSelectable}
+            pagination={true}
+            paginationPageSize={8}
+            // selection from drop down pagination below this not needed
+            // paginationAutoPageSize={true}
           />
         </div>
       </div>
