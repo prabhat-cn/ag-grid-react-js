@@ -3,7 +3,7 @@ import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { AgAbstractField } from 'ag-grid-community';
 
 const Table = () => {
-  const data = [
+  const staticData = [
     {
       name: 'Rahul',
       age: 23,
@@ -86,7 +86,7 @@ const Table = () => {
         >
           {/* Type- 3 */}
           <AgGridReact
-            rowData={data}
+            rowData={staticData}
             columnDefs={columns}
             defaultColDef={defaultColDef}
             onGridReady={onGridReady}

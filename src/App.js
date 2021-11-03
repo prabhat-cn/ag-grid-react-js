@@ -1,4 +1,5 @@
 import { Switch, Route, Link } from 'react-router-dom';
+import PopulateApiData from './agGrid/PopulateApiData';
 import RenderCustomComponent from './agGrid/RenderCustomComponent';
 import Table from './agGrid/Table';
 import './App.css';
@@ -16,6 +17,10 @@ function App() {
           path="/rendercustomcomponent"
           component={RenderCustomComponent}
         />
+        <Route exact path="/populateapi" component={PopulateApiData} />
+        <Route exact path="*">
+          404 Page not found!
+        </Route>
       </Switch>
     </div>
   );

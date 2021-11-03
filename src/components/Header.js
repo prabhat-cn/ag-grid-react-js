@@ -9,8 +9,8 @@ const Header = () => {
           <Navbar.Brand href="/">Home</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/rendercustomcomponent">Render Custom</Nav.Link>
-            {/* <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link> */}
+            <Nav.Link href="/populateapi">Populate Api Data</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
