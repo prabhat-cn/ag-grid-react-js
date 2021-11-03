@@ -4,7 +4,7 @@
   "Tutorial": "https://youtube.com/playlist?list=PLqhnP4YYLcb4X3AgmW699wyAhoP2SYf5j",
   "tut-git": "https://github.com/vikas62081/YT/tree/agGridFilterExport",
   "git-personal": "https://github.com/prabhat-cn/ag-grid-react-js.git",
-  "netlify": "",
+  "netlify": "https://ag-grid-react-js.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
