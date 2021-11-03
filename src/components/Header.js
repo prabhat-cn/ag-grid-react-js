@@ -13,6 +13,7 @@ const Header = () => {
             <Nav.Link href="/selectionbasedcondition">
               Row Selection Condition
             </Nav.Link>
+            <Nav.Link href="/showhidecolumn">Show Hide Column</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
