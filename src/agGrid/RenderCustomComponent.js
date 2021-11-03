@@ -57,16 +57,19 @@ const RenderCustomComponent = () => {
           ? { background: 'green', borderLeft: '5px dotted #000' }
           : { background: 'red' },
       cellClass: (params) => (params.value > 27 ? 'moreThan27' : 'lessThan27'),
+      tooltipField: 'name',
     },
     {
       headerName: 'Department',
       field: 'department',
       sortable: true,
+      tooltipField: 'name',
     },
     {
       headerName: 'Salary',
       field: 'salary',
       sortable: true,
+      tooltipField: 'name',
     },
     {
       headerName: 'Action',
@@ -99,7 +102,7 @@ const RenderCustomComponent = () => {
   return (
     <>
       <div>
-        <h2>Render Custom, Static Data, Dynamic Styles</h2>
+        <h2>Render Custom, Static Data, Dynamic Styles, Tooltip</h2>
         <button
           onClick={() => {
             onExportClick();
@@ -121,6 +124,8 @@ const RenderCustomComponent = () => {
             columnDefs={columnsDefs}
             defaultColDef={defaultColDef}
             onGridReady={onGridReady}
+            enableBrowserTooltips={true}
+            tooltipShowDelay={{ tooltipShowDelay: 2 }}
           />
         </div>
       </div>
