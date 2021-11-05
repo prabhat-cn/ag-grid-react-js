@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import 'ag-grid-enterprise';
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 const ServerSideOperation = () => {
   const [gridApi, setGridApi] = useState(null);
@@ -28,8 +25,12 @@ const ServerSideOperation = () => {
   const datasource = {
     getRows(params) {
       console.log(JSON.stringify(params.request, null, 1));
-      console.log(params);
-      const { startRow, endRow, filterModel, sortModel } = params.request;
+      // const { startRow, endRow, filterModel, sortModel } = params.request;
+      // for static
+      let startRow = 0;
+
+      const endRow = startRow + 499;
+      const { filterModel, sortModel } = params.request;
       let url = `https://jsonplaceholder.typicode.com/comments?`;
       //Sorting
       if (sortModel.length) {
@@ -42,7 +43,7 @@ const ServerSideOperation = () => {
         url += `${filter}=${filterModel[filter].filter}&`;
       });
       //Pagination
-      // url += `_start=${startRow}&_end=${endRow}`;
+      url += `_start=${startRow}&_end=${endRow}`;
       fetch(url)
         .then((httpResponse) => httpResponse.json())
         .then((response) => {
