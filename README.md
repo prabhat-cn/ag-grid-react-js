@@ -16,3 +16,9 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 ## React Routing
 
 https://reactrouter.com/native/guides/quick-start
+
+## some time json server used
+
+https://www.npmjs.com/package/json-server
+
+https://www.ag-grid.com/react-data-grid/server-side-operations-nodejs/

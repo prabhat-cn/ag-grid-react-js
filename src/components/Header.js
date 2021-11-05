@@ -15,6 +15,7 @@ const Header = () => {
             </Nav.Link>
             <Nav.Link href="/showhidecolumn">Show Hide Column</Nav.Link>
             <Nav.Link href="/quickfilter">Quick Filter</Nav.Link>
+            <Nav.Link href="/serveroperation">Server Side Operation</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
