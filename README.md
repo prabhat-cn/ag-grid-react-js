@@ -22,3 +22,7 @@ https://reactrouter.com/native/guides/quick-start
 https://www.npmjs.com/package/json-server
 
 https://www.ag-grid.com/react-data-grid/server-side-operations-nodejs/
+
+## material ui used for crud
+
+https://mui.com/

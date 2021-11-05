@@ -1,4 +1,5 @@
 import { Switch, Route, Link } from 'react-router-dom';
+import Main from './agGrid/crud/Main';
 import PopulateApiData from './agGrid/PopulateApiData';
 import QuickFilter from './agGrid/QuickFilter';
 import RenderCustomComponent from './agGrid/RenderCustomComponent';
@@ -7,7 +8,7 @@ import ServerSideOperation from './agGrid/ServerSideOperation';
 import ShowHideColumn from './agGrid/ShowHideColumn';
 import Table from './agGrid/Table';
 import './App.css';
-import Header from './components/Header';
+import Header from './includes/Header';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             path="/serveroperation"
             component={ServerSideOperation}
           />
+          <Route exact path="/crud" component={Main} />
           <Route exact path="*">
             404 Page not found!
           </Route>
